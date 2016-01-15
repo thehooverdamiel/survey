@@ -1,0 +1,16 @@
+
+
+<h1>Questions:</h1>
+
+<% Question.all.each do |question| %>
+	<%= form_for :answer, url: answers_path do |f| %>
+	<h1><%= question.text %></h1>
+	
+		<% question.options.each do |option| %>
+	  <p>
+	    <%= radio_button_tag(:option, option) %>
+	    <%= label_tag(:option, option.text) %>
+	  </p>
+		<% end %>
+	<% end %>
+<% end %>

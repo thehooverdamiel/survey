@@ -1,0 +1,18 @@
+<h1>People#new</h1>
+<p>Find me in app/views/people/new.html.erb</p>
+
+<%= form_for :person, url: people_path do |f| %>
+	<p>
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

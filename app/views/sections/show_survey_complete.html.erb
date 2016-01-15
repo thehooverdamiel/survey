@@ -1,0 +1,13 @@
+<h1> Survey Complete</h1>
+
+<h2>Answers for <%= @person.name %></h2>
+
+<% @answers.each do |answer| %>
+	<p>
+		<%= Question.find(Option.find(answer.option_id).question_id).text %>
+		:&nbsp;&nbsp;
+		<%= Option.find(answer.option_id).text %>
+	</p>
+<% end %>
+
+<%= link_to 'Click here to return to login', new_person_path %>
