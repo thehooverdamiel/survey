@@ -6,7 +6,7 @@ class SectionsController < ApplicationController
   end
 
   def update_s1
-  	empties = false;
+  	empties = false
   	make_answer(params['1'], params['person_id'], person_sections_1_path)
   	make_answer(params['7'], params['person_id'], person_sections_1_path)
   	make_answer(params['8'], params['person_id'], person_sections_1_path)
@@ -73,9 +73,9 @@ class SectionsController < ApplicationController
   	def make_answer(option_id, person_id, url)
   		if option_id.present?
   		  			Answer.create(option_id: option_id, person_id: person_id)
-  		else
-  			flash[:notice] = "Must not have blank answers"
-  			empties = true
+  		#else
+  			#flash[:notice] = "Must not have blank answers"
+  			#empties = true
 			end
   	end
 
