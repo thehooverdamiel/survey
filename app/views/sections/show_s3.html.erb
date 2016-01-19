@@ -1,4 +1,60 @@
 <h1>Sections#show_s3</h1>
 <p>Find me in app/views/sections/show_s3.html.erb</p>
 
-<%= render 'form' %>
+<%= render 'flash' %>
+
+<%= form_tag url: @url, method: 'post' do %>
+ <h1>Questions:</h1>
+
+     <h3>Question 11</h3>
+       <p>
+         <%= radio_button_tag('question 11', 'option 1') %>
+         <%= label_tag('question 11', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 11', 'option 2') %>
+         <%= label_tag('question 11', 'option 2') %>
+       </p>
+
+       <h3>Question 12</h3>
+       <p>
+         <%= radio_button_tag('question 12', 'option 1') %>
+         <%= label_tag('question 12', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 12', 'option 2') %>
+         <%= label_tag('question 12', 'option 2') %>
+       </p>
+
+       <h3>Question 13</h3>
+       <p>
+         <%= radio_button_tag('question 13', 'option 1') %>
+         <%= label_tag('question 13', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 13', 'option 2') %>
+         <%= label_tag('question 13', 'option 2') %>
+       </p>
+
+       <h3>Question 14</h3>
+       <p>
+         <%= radio_button_tag('question 14', 'option 1') %>
+         <%= label_tag('question 14', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 14', 'option 2') %>
+         <%= label_tag('question 14', 'option 2') %>
+       </p>
+
+       <h3>Question 15</h3>
+       <p>
+         <%= radio_button_tag('question 15', 'option 1') %>
+         <%= label_tag('question 15', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 15', 'option 2') %>
+         <%= label_tag('question 15', 'option 2') %>
+       </p>
+       
+  <%= submit_tag %>
+<% end %>

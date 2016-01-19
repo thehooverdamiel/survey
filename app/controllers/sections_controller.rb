@@ -5,11 +5,13 @@ class SectionsController < ApplicationController
   end
 
   def update_s1
-  	make_answer('question 1', params['question 1'], params['person_id'])
-  	make_answer('question 2', params['question 2'], params['person_id'])
-  	make_answer('question 3', params['question 3'], params['person_id'])
-  	make_answer('question 4', params['question 4'], params['person_id'])
-  	make_answer('question 5', params['question 5'], params['person_id'])
+    person = Person.find(params[:person_id])
+
+    person.answers.create(question_and_answer: 'question 1: ' + params['question 1'].to_s)
+  	person.answers.create(question_and_answer: 'question 2: ' + params['question 2'].to_s)
+  	person.answers.create(question_and_answer: 'question 3: ' + params['question 3'].to_s)
+  	person.answers.create(question_and_answer: 'question 4: ' + params['question 4'].to_s)
+  	person.answers.create(question_and_answer: 'question 5: ' + params['question 5'].to_s)
   	redirect_to person_sections_2_path
   end
 
@@ -19,47 +21,50 @@ class SectionsController < ApplicationController
   end
 
   def update_s2
-		make_answer('question 6', params['6'], params['person_id'])
-    make_answer('question 7', params['7'], params['person_id'])
-    make_answer('question 8', params['8'], params['person_id'])
-    make_answer('question 9', params['9'], params['person_id'])
-    make_answer('question 10', params['10'], params['person_id'])
-  	#redirect_to person_sections_3_path
+    person = Person.find(params[:person_id])
+
+		person.answers.create(question_and_answer: 'question 6: ' + params['question 6'].to_s)
+    person.answers.create(question_and_answer: 'question 7: ' + params['question 7'].to_s)
+    person.answers.create(question_and_answer: 'question 8: ' + params['question 8'].to_s)
+    person.answers.create(question_and_answer: 'question 9: ' + params['question 9'].to_s)
+    person.answers.create(question_and_answer: 'question 10: ' + params['question 10'].to_s)
+  	redirect_to person_sections_3_path
   end
 
   def show_s3
   	@person = Person.find(params[:person_id])
   	@url = person_sections_3_path
-  	@questions = [Question.find('16'),	Question.find('17'), Question.find('18'), Question.find('19'), Question.find('20')]
   end
 
   def update_s3
-  	make_answer(params['16'], params['person_id'])
-  	make_answer(params['17'], params['person_id'])
-  	make_answer(params['18'], params['person_id'])
-  	make_answer(params['19'], params['person_id'])
-  	make_answer(params['20'], params['person_id'])
+  	person = Person.find(params[:person_id])
+
+    person.answers.create(question_and_answer: 'question 11: ' + params['question 11'].to_s)
+    person.answers.create(question_and_answer: 'question 12: ' + params['question 12'].to_s)
+    person.answers.create(question_and_answer: 'question 13: ' + params['question 13'].to_s)
+    person.answers.create(question_and_answer: 'question 14: ' + params['question 14'].to_s)
+    person.answers.create(question_and_answer: 'question 15: ' + params['question 15'].to_s)
   	redirect_to person_sections_4_path
   end
 
   def show_s4
   	@person = Person.find(params[:person_id])
   	@url = person_sections_4_path
-  	@questions = [Question.find('21'),	Question.find('22'), Question.find('23'), Question.find('24'), Question.find('25')]
   end
 
   def update_s4
-  	make_answer(params['21'], params['person_id'])
-  	make_answer(params['22'], params['person_id'])
-  	make_answer(params['23'], params['person_id'])
-  	make_answer(params['24'], params['person_id'])
-  	make_answer(params['25'], params['person_id'])
+  	person = Person.find(params[:person_id])
+    
+    person.answers.create(question_and_answer: 'question 16: ' + params['question 16'].to_s)
+    person.answers.create(question_and_answer: 'question 17: ' + params['question 17'].to_s)
+    person.answers.create(question_and_answer: 'question 18: ' + params['question 18'].to_s)
+    person.answers.create(question_and_answer: 'question 19: ' + params['question 19'].to_s)
+    person.answers.create(question_and_answer: 'question 20: ' + params['question 20'].to_s)
   	redirect_to person_sections_survey_complete_path
   end
 
   def show_survey_complete
   	@person = Person.find(params[:person_id])
-  	@answers = Answer.where(person_id: @person.id)
   end
 
   private

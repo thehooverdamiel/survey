@@ -1,7 +1,7 @@
 <h1>Sections#show_s2</h1>
 <p>Find me in app/views/sections/show_s2.html.erb</p>
 
-<%= render 'form' %>
+<%= render 'flash' %>
 
 <%= form_tag url: @url, method: 'post' do %>
  <h1>Questions:</h1>
@@ -12,8 +12,8 @@
          <%= label_tag('question 6', 'option 1') %>
        </p>
        <p>
-         <%= radio_button_tag('question 1', 'option 2') %>
-         <%= label_tag('question 1', 'option 2') %>
+         <%= radio_button_tag('question 6', 'option 2') %>
+         <%= label_tag('question 6', 'option 2') %>
        </p>
 
        <h3>Question 7</h3>
@@ -58,5 +58,3 @@
        
   <%= submit_tag %>
 <% end %>
-
-<%= debug params %>

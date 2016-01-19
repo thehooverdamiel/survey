@@ -2,11 +2,9 @@
 
 <h2>Answers for <%= @person.name %></h2>
 
-<% @answers.each do |answer| %>
+<% @person.answers.each do |answer| %>
 	<p>
-		<%= Question.find(Option.find(answer.option_id).question_id).text %>
-		:&nbsp;&nbsp;
-		<%= Option.find(answer.option_id).text %>
+		<%= answer.question_and_answer %>
 	</p>
 <% end %>
 
