@@ -2,19 +2,3 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-
-<%= form_tag url: @url, method: 'post' do %>
- <h1>Questions:</h1>
-
-     <h3>Question 1</h3>
-       <p>
-         <%= radio_button_tag('question 1', 'option 1') %>
-         <%= label_tag('question 1', 'option 1') %>
-       </p>
-       <p>
-         <%= radio_button_tag('question 1', 'option 2') %>
-         <%= label_tag('question 2', 'option 2') %>
-       </p>
-       
-  <%= submit_tag %>
-<% end %>

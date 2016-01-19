@@ -2,32 +2,29 @@ class SectionsController < ApplicationController
   def show_s1
   	@person = Person.find(params[:person_id])
   	@url = person_sections_1_path
-  	@questions = [Question.find('1'),	Question.find('7'), Question.find('8'), Question.find('9'), Question.find('10')]
   end
 
   def update_s1
-  	empties = false
-  	make_answer(params['1'], params['person_id'], person_sections_1_path)
-  	make_answer(params['7'], params['person_id'], person_sections_1_path)
-  	make_answer(params['8'], params['person_id'], person_sections_1_path)
-  	make_answer(params['9'], params['person_id'], person_sections_1_path)
-  	make_answer(params['10'], params['person_id'], person_sections_1_path)
+  	make_answer('question 1', params['question 1'], params['person_id'])
+  	make_answer('question 2', params['question 2'], params['person_id'])
+  	make_answer('question 3', params['question 3'], params['person_id'])
+  	make_answer('question 4', params['question 4'], params['person_id'])
+  	make_answer('question 5', params['question 5'], params['person_id'])
   	redirect_to person_sections_2_path
   end
 
   def show_s2
   	@person = Person.find(params[:person_id])
   	@url = person_sections_2_path
-  	@questions = [Question.find('11'),	Question.find('12'), Question.find('13'), Question.find('14'), Question.find('15')]
   end
 
   def update_s2
-		make_answer(params['11'], params['person_id'], person_sections_2_path)
-  	make_answer(params['12'], params['person_id'], person_sections_2_path)
-  	make_answer(params['13'], params['person_id'], person_sections_2_path)
-  	make_answer(params['14'], params['person_id'], person_sections_2_path)
-  	make_answer(params['15'], params['person_id'], person_sections_2_path)
-  	redirect_to person_sections_3_path
+		make_answer('question 6', params['6'], params['person_id'])
+    make_answer('question 7', params['7'], params['person_id'])
+    make_answer('question 8', params['8'], params['person_id'])
+    make_answer('question 9', params['9'], params['person_id'])
+    make_answer('question 10', params['10'], params['person_id'])
+  	#redirect_to person_sections_3_path
   end
 
   def show_s3
@@ -37,11 +34,11 @@ class SectionsController < ApplicationController
   end
 
   def update_s3
-  	make_answer(params['16'], params['person_id'], person_sections_3_path)
-  	make_answer(params['17'], params['person_id'], person_sections_3_path)
-  	make_answer(params['18'], params['person_id'], person_sections_3_path)
-  	make_answer(params['19'], params['person_id'], person_sections_3_path)
-  	make_answer(params['20'], params['person_id'], person_sections_3_path)
+  	make_answer(params['16'], params['person_id'])
+  	make_answer(params['17'], params['person_id'])
+  	make_answer(params['18'], params['person_id'])
+  	make_answer(params['19'], params['person_id'])
+  	make_answer(params['20'], params['person_id'])
   	redirect_to person_sections_4_path
   end
 
@@ -52,11 +49,11 @@ class SectionsController < ApplicationController
   end
 
   def update_s4
-  	make_answer(params['21'], params['person_id'], person_sections_4_path)
-  	make_answer(params['22'], params['person_id'], person_sections_4_path)
-  	make_answer(params['23'], params['person_id'], person_sections_4_path)
-  	make_answer(params['24'], params['person_id'], person_sections_4_path)
-  	make_answer(params['25'], params['person_id'], person_sections_4_path)
+  	make_answer(params['21'], params['person_id'])
+  	make_answer(params['22'], params['person_id'])
+  	make_answer(params['23'], params['person_id'])
+  	make_answer(params['24'], params['person_id'])
+  	make_answer(params['25'], params['person_id'])
   	redirect_to person_sections_survey_complete_path
   end
 
@@ -70,13 +67,9 @@ class SectionsController < ApplicationController
   		'Must not have blank answers'
   	end
 
-  	def make_answer(option_id, person_id, url)
-  		if option_id.present?
-  		  			Answer.create(option_id: option_id, person_id: person_id)
-  		#else
-  			#flash[:notice] = "Must not have blank answers"
-  			#empties = true
-			end
+  	def make_answer(question, answer, person_id)
+      qa_string = question.to_s + ": " + answer.to_s
+  		Answer.create(question_and_answer: qa_string, person_id: person_id)
   	end
 
 end

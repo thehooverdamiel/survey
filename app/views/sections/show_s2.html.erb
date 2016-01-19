@@ -2,3 +2,61 @@
 <p>Find me in app/views/sections/show_s2.html.erb</p>
 
 <%= render 'form' %>
+
+<%= form_tag url: @url, method: 'post' do %>
+ <h1>Questions:</h1>
+
+     <h3>Question 6</h3>
+       <p>
+         <%= radio_button_tag('question 6', 'option 1') %>
+         <%= label_tag('question 6', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 1', 'option 2') %>
+         <%= label_tag('question 1', 'option 2') %>
+       </p>
+
+       <h3>Question 7</h3>
+       <p>
+         <%= radio_button_tag('question 7', 'option 1') %>
+         <%= label_tag('question 7', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 7', 'option 2') %>
+         <%= label_tag('question 7', 'option 2') %>
+       </p>
+
+       <h3>Question 8</h3>
+       <p>
+         <%= radio_button_tag('question 8', 'option 1') %>
+         <%= label_tag('question 8', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 8', 'option 2') %>
+         <%= label_tag('question 8', 'option 2') %>
+       </p>
+
+       <h3>Question 9</h3>
+       <p>
+         <%= radio_button_tag('question 9', 'option 1') %>
+         <%= label_tag('question 9', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 9', 'option 2') %>
+         <%= label_tag('question 9', 'option 2') %>
+       </p>
+
+       <h3>Question 10</h3>
+       <p>
+         <%= radio_button_tag('question 10', 'option 1') %>
+         <%= label_tag('question 10', 'option 1') %>
+       </p>
+       <p>
+         <%= radio_button_tag('question 10', 'option 2') %>
+         <%= label_tag('question 10', 'option 2') %>
+       </p>
+       
+  <%= submit_tag %>
+<% end %>
+
+<%= debug params %>
